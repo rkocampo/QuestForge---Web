@@ -1,0 +1,211 @@
+:root {
+    --bg-dark: #070e20;
+    --panel-bg: #111e40;
+    --panel-header: #0a132e;
+    --gold-light: #fce07d;
+    --gold-main: #dca820;
+    --text-main: #e0e5ff;
+    --text-muted: #fcfcfc;
+    --accent-blue: #2b4b8a;
+    --success-green: #3b823e;
+    --warning-orange: #b87a14;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Moving Background --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    background-image: url('background(1).png'); 
+    background-size: 120% auto; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: panBackground 60s linear infinite; 
+}
+
+@keyframes panBackground {
+    0% { background-position: 0% 50%; }     
+    50% { background-position: 100% 50%; }  
+    100% { background-position: 0% 50%; }   
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; 
+    margin-top: 20px;   
+    margin-bottom: 20px; 
+    background-color: var(--panel-bg);
+    border: 2px solid var(--accent-blue);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    position: sticky;   
+    top: 20px;          
+    z-index: 1000;      
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--gold-light);
+    text-shadow: 0 0 10px rgba(220, 168, 32, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 70px;
+    align-items: flex-end;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold-light);
+}
+
+.nav-login {
+    display: flex;
+    align-items: center;
+}
+
+/* --- Buttons --- */
+.btn {
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.btn-gold {
+    background: linear-gradient(to bottom, var(--gold-light), var(--gold-main));
+    color: #111;
+    border: 1px solid #fff;
+}
+
+/* --- Shared Forms (Used in Login and Index) --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    background-color: rgba(0, 0, 0, 0.3); 
+    border: 1px solid var(--accent-blue);
+    color: var(--text-main);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--gold-main); 
+}
+
+/* --- Layout Utilities --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.gold-heading {
+    color: var(--gold-light);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* --- Cards/Panels --- */
+.panel {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--accent-blue);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.panel-header {
+    background-color: var(--panel-header);
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--accent-blue);
+    font-weight: bold;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-content {
+    padding: 30px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 0px;
+    color: var(--text-muted);
+}
+
+.footer-logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* --- Shared Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+    .action-panel-footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+}

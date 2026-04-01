@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestForge - Gamify Your Education</title>
+    
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="leaderboard.css">
+    <link rel="stylesheet" href="about.css">
+
+    <style>
+        /* Optional: Adds smooth scrolling when clicking navigation links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Optional: Adds some spacing between sections for better readability on a single page */
+        .page-section {
+            padding: 60px 0;
+            min-height: 80vh; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">QUESTFORGE</div>
+            
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#profile">Profile</a>
+                <a href="#leaderboard">Leaderboard</a> 
+                <a href="#about">About Us</a>
+            </div>
+        </nav>
+
+        <section id="home" class="page-section">
+            <main class="questforge">
+                <div class="questforge-content">
+                    <div class="questforge-logo-large">
+                        <img src="new logo.png" alt="QuestForge Logo" class="questforge-logo-img">
+                    </div>
+
+                    <h1 class="questforge-title">Transform Your Academic Journey into a Game.</h1>
+                    <p class="questforge-subtitle">
+                        QuestForge is a desktop productivity application that revolutionizes how you manage your studies. Turn mundane assignments into exciting "Quests", earn XP, level up, and conquer your semester!
+                    </p>
+                </div>
+            </main>
+        </section>
+
+    <section id="showcase" class="page-section">
+    <div class="showcase-container">
+        
+        <div class="showcase-item">
+            <div class="image-area">
+                <img src="QUESTS.png" alt="Feature One">
+            </div>
+            <div class="showcase-text">
+                <h1 class="gold-heading">📜 Quests</h1>
+                <p>Turn your assignments into missions. Complete them to earn XP and level up your character.</p>
+            </div>
+        </div>
+
+        <div class="showcase-item">
+            <div class="image-area">
+                <img src="ACHIEVEMENTS.png" alt="Feature Two">
+            </div>
+            <div class="showcase-text">
+                <h1 class="gold-heading">🎖️ Achievements</h1>
+                <p>Earn special badges like Early Bird or Task Master by hitting your study goals and staying consistent.</p>
+            </div>
+        </div>
+
+        <div class="showcase-item">
+            <div class="image-area">
+                <img src="PROFILE.png" alt="Feature Three">
+            </div>
+            <div class="showcase-text">
+                <h1 class="gold-heading">👤 Profile</h1>
+                <p>Your personal hero dashboard. Track your current level, total XP, and overall rank at a glance.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+       <section id="profile" class="profile-section">
+    <div class="profile-container">
+    
+    <div class="profile-overview">
+        <p><h1 class="gold-heading">👤 Your Profile Hub</h1></p>
+            <p class="profile-description">
+                The Profile Hub serves as a central dashboard for tracking your personal evolution throughout your academic journey. It provides a real-time summary of your character’s growth, displaying current statistics, unlocked achievements, and a history of recent activities to ensure you always know your standing. By monitoring your progress and milestones in one place, you can stay motivated as you level up and master your studies.
+            </p>
+    </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <h2>👤 Janry</h2>
+            </div>
+            
+            <div class="panel-content">
+                <div class="profile-top">
+                    <div class="avatar">
+                        <img src="AVATAR(1).png" alt="Janry's Avatar">
+                    </div>
+                    
+                    <div class="xp-bar-container">
+                        <div class="xp-text">
+                            <span class="xp-numbers">XP: 1500 / 2000</span>
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <div class="xp-bar">
+                            <div class="xp-fill" style="width: 75%;"></div> 
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="gold-heading section-label">🎖️ Badges</h3>
+                <div class="badges-grid">
+                    <div class="badge-item active">🥉 Early Bird</div>
+                    <div class="badge-item active">🥈 Consistency King</div>
+                    <div class="badge-item locked">🔒 Task Master</div>
+                </div>
+
+                <h3 class="gold-heading section-label">📜 Recent Quests</h3>
+    <ul class="quest-list">
+        <li class="quest-item">
+            <div class="quest-info">
+                <strong>HCI Lecture</strong> (Easy)<br>
+                <small class="text-muted">Reward: 10 XP</small>
+            </div>
+            <span class="status-badge status-complete">Completed</span>
+        </li>
+        <li class="quest-item">
+            <div class="quest-info">
+                <strong>HCI Lab</strong> (Hard)<br>
+                <small class="text-muted">Reward: 100 XP</small>
+            </div>
+            <span class="status-badge status-due">Due Soon</span>
+        </li>
+        <li class="quest-item">
+            <div class="quest-info">
+                <strong>Discrete Structures</strong> (Medium)<br>
+                <small class="text-muted">Reward: 50 XP</small>
+            </div>
+            <span class="status-badge status-due">Due Soon</span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+</section> 
+
+       <section id="leaderboard" class="page-section">
+    <div class="leaderboard-container"> <div class="panel">
+            <div class="panel-header">
+                🏆 TOP 10 RANKING
+            </div>
+            <div class="panel-content">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student</th>
+                            <th>Level</th>
+                            <th>XP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="rank-number rank-1">1</span></td><td>👦 Janry</td><td>Level 5</td><td>1500 XP</td></tr>
+                        <tr><td><span class="rank-number rank-2">2</span></td><td>👧 Princess</td><td>Level 4</td><td>1200 XP</td></tr>
+                        <tr><td><span class="rank-number rank-3">3</span></td><td>👧 Kath</td><td>Level 4</td><td>1100 XP</td></tr>
+                        <tr><td><span class="rank-number">4</span></td><td>👧 Rhian</td><td>Level 3</td><td>950 XP</td></tr>
+                        <tr><td><span class="rank-number">5</span></td><td>👦 Gerald</td><td>Level 3</td><td>900 XP</td></tr>
+                        <tr><td><span class="rank-number">6</span></td><td>👦 Daryl</td><td>Level 3</td><td>850 XP</td></tr>
+                        <tr><td><span class="rank-number">7</span></td><td>👦 Zyron</td><td>Level 2</td><td>700 XP</td></tr>
+                        <tr><td><span class="rank-number">8</span></td><td>👦 Aaron</td><td>Level 2</td><td>650 XP</td></tr>
+                        <tr><td><span class="rank-number">9</span></td><td>👧 Gela</td><td>Level 2</td><td>600 XP</td></tr>
+                        <tr><td><span class="rank-number">10</span></td><td>👧 Christine</td><td>Level 1</td><td>400 XP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="leaderboard-overview">
+        <p><h1 class="gold-heading">🥇 Leaderboard</h1></p>
+        <p class="leaderboard-description">
+                The Leaderboard showcases the top-performing students within the QuestForge community. 
+                Rise through the ranks by completing high-difficulty bounties, maintaining your study streaks, 
+                and earning legendary badges. Only the most dedicated students will see their names 
+                cemented at the top of the realm. The most disciplined and persistent students—those
+                who treat every challenge as an opportunity for growth—will see their names permanently cemented
+                at the pinnacle of the realm, inspiring the next generation of scholars to begin their own quest for excellence.
+            </p>
+        </div>
+
+    </div>
+</section>
+            </main>
+        </section>
+
+        <section id="about" class="page-section">
+            <main>
+                <div class="about-header">
+                    <h1 class="gold-heading about-title">✨ The Legend of QuestForge</h1>
+                    <p class="about-subtitle">
+                        Discover how we are turning the grind of studying into an epic adventure.
+                    </p>
+                </div>
+
+                <div class="panel" style="margin-bottom: 40px;">
+                    <div class="panel-header">
+                        🏹 Our Mission
+                    </div>
+                    <div class="panel-content team-content">
+                        <p style="margin-bottom: 20px;">
+                            To equip students with the ultimate gamified task-management weapon. By transforming assignments into bounties and exams into boss battles, QuestForge motivates learners to conquer their daily quests, level up their skills, and claim their rightful achievements in a collaborative, engaging environment.
+                        </p>
+                        <p>
+                            Whether you are fighting solo to climb the Individual Leaderboards or teaming up with your guildmates to conquer Group Projects, your academic journey is now completely in your hands. Level up, earn badges, and prove your knowledge!
+                        </p>
+                    </div>
+                </div>
+                
+                <section class="grid">
+                    <div class="panel team-section">
+                        <div class="panel-header">🛡️ The Development Team</div>
+                        <div class="panel-content team-content">
+                            <ul class="team-list">
+                                <li><span class="team-role">Rhian Kate Ocampo</span> - Project Manager</li>
+                                <li><span class="team-role">Janry Malong</span> - Web Programmer</li>
+                                <li><span class="team-role">Gerald Matthew Remegio</span> - Lead Programmer</li>
+                                <li><span class="team-role">Daryl Narvasa</span> - UI/UX Designer</li>
+                                <li><span class="team-role">Zryon Baniqued</span> - Documentator and QA Tester</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </section>
+
+        <footer>
+            <div class="footer-logo">QUESTFORGE</div>
+            <p>&copy; 2026 QuestForge. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
