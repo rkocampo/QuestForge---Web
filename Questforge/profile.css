@@ -1,4 +1,3 @@
-/* Removes link decoration and ensures it takes up the right space */
 .profile-redirect-link {
     text-decoration: none;
     flex: 1.1; /* Keeps the same width as your panels */
@@ -41,41 +40,12 @@
     letter-spacing: 1px;
 }
 
-.avatar {
-    width: 100px;
-    height: 100px;
-    background-color: #111e40;
-    border: 2px solid var(--gold-main);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; 
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-.profile-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px; /* Matching the gap from your Features section */
-    width: 100%;
-}
-
 .profile-overview {
     flex: 1;
     text-align: left; /* Keeps descriptions clean on the left */
     padding: 20px;
 }
 
-.profile-section .panel {
-    flex: 1.1; /* Slightly wider than the text side */
-    margin: 0;   /* Removes any default margins that might break alignment */
-}
 .gold-heading {
     font-size: 3rem;
     color: var(--gold-light);
@@ -95,92 +65,40 @@
     text-align: justify;        /* 5. Clean, book-like edges */
     text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* 6. POP: Text "floats" above background */  
 }
+/* --- Responsiveness --- */
 
-.overview-item {
-    margin-bottom: 30px;
-}
+/* This triggers when the screen is 768px wide or smaller (Tablets/Phones) */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the image and text vertically */
+    .page-section {
+        flex-direction: column; 
+        height: auto; /* Allow section to grow if content is long */
+        padding: 60px 20px;
+        text-align: center; /* Center text for mobile */
+    }
 
-.overview-item p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-.xp-bar-container {
-    flex-grow: 1;
-}
+    /* 2. Fix the font sizes so they aren't huge on small screens */
+    .gold-heading {
+        font-size: 2rem; 
+        text-align: center;
+    }
 
-.xp-text {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
+    .profile-description {
+        font-size: 1.1rem;
+        text-align: center; /* Justify looks messy on small screens */
+        line-height: 1.6;
+    }
 
-.xp-bar {
-    height: 12px;
-    background-color: #000;
-    border-radius: 6px;
-    border: 1px solid var(--accent-blue);
-    overflow: hidden;
-}
+    /* 3. Adjust the image size */
+    .hero-avatar-img {
+        max-width: 300px; /* Smaller for mobile */
+        margin: 0 auto;
+    }
 
-.xp-fill {
-    height: 100%;
-    width: 75%;
-    background: linear-gradient(to right, var(--gold-main), var(--gold-light));
-}
-
-.badges-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.badge-item {
-    background-color: rgba(255,255,255,0.05);
-    padding: 12px;
-    border-radius: 6px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    font-size: 14px;
-}
-
-.badge-item.active {
-    border-color: 1px solid rgba(255,255,255,0.1);
-    color: var(--gold-light);
-}
-
-.badge-item.locked {
-    opacity: 0.5;
-}
-
-.quest-list {
-    list-style: none;
-}
-
-.quest-item {
-    background-color: rgba(255,255,255,0.05);
-    padding: 12px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.status-badge {
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.status-complete { 
-    background-color: var(--success-green); color: white; 
-}
-
-.status-due { 
-    background-color: var(--warning-orange); color: white; 
+    /* 4. Ensure the link takes full width */
+    .profile-redirect-link {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }

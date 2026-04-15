@@ -156,17 +156,20 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .hero-main-img {
-    max-height: 70vh; 
+    max-height: 60vh; 
     width: auto;
     max-width: 100%;
     animation: float 4s ease-in-out infinite;
 }
 
-
-
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
 
 /* --- Buttons --- */
 .btn {
@@ -236,18 +239,7 @@ nav {
     filter: drop-shadow(0 0 15px rgba(252, 224, 125, 0.384)) 
             drop-shadow(0 0 30px rgba(220, 168, 32, 0.6));
 }
-.text-muted {
-    color: var(--text-muted);
-    transition: all 0.4s ease; /* Smooth transition */
-    cursor: default;
-    opacity: 0.8; /* Slightly dimmed by default */
-    opacity: 1; /* Brightens to full white/light color */
-    color: #ffffff; 
-    transform: translateX(5px); /* Subtle slide to the right */
-    
-    /* Optional: Very soft glow to match your theme */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
+
 /* Container for the Hero Button */
 .hero-actions {
     margin-top: 40px; /* Space between subtitle and button */
@@ -324,28 +316,53 @@ footer {
     padding: 100px 0;
     min-height: 80vh; 
 }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+.footer-slim {
+    background-color: #0a132e;
+    border-top: 1px solid var(--accent-blue);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between; /* Spreads items to left, center, and right */
+    align-items: center;
+    /* IMPORTANT: Remove 'page-section' class so it's not 100vh */
+    min-height: 80px; 
 }
 
-/* --- Enhanced Mobile Responsiveness --- */
+.footer-logo-small {
+    color: var(--gold-light);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
 
-/* Tablet & Small Laptops (under 1024px) */
-@media (max-width: 1024px) {
-    .nav-links {
-        gap: 25px; /* Reduce spacing between links */
-    }
-    
-    .questforge-layout {
-        gap: 30px;
-    }
+.footer-left p {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
 
-    .hero-text-side .gold-heading {
-        font-size: 2.5rem;
+.footer-socials a, .footer-right a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover, .footer-right a:hover {
+    color: var(--gold-light);
+}
+
+/* Responsive: Stack them on mobile so they don't crush together */
+@media (max-width: 600px) {
+    .footer-slim {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 30px 20px;
     }
 }
+
+
 
 /* Mobile & Small Tablets (under 900px) */
 @media (max-width: 900px) {
