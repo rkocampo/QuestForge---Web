@@ -60,9 +60,20 @@ nav {
     display: flex;
     justify-content: flex-start;
 }
+.questforge-text {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0 0 5px rgba(252, 224, 125, 0.5)) 
+            drop-shadow(0 0 10px rgba(220, 168, 32, 0.7));
+    }
 
 .nav-logo-img {
-    height: 60px; /* Reduced slightly to fit 80px nav better */
+    height: 75px; /* Reduced slightly to fit 80px nav better */
     width: auto;
     display: block;
     transition: transform 0.3s ease;
@@ -99,14 +110,6 @@ nav {
 .nav-links a:hover {
     color: var(--gold-light, #fce07d);
     /* Removed flex: 1 from hover so it doesn't distort! */
-}
-
-/* --- 3. Right Side (Login Button) --- */
-.nav-login {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Pushes button to right edge */
-    flex: 1; /* Matches the logo size, forcing links to center! */
 }
 
 /* --- Hero Section (Swapped: Text Left, Image Right) --- */
@@ -249,31 +252,11 @@ nav {
 .hero-actions {
     margin-top: 40px; /* Space between subtitle and button */
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 /* Specific styling for the Hero Download Button */
-.hero-download-btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    
-    /* Using your gold gradient variables */
-    background: linear-gradient(to bottom, #fff3a3 0%, #fce07d 50%, #dca820 80%);
-    color: #070e20; /* Dark text looks better on gold */
-    box-shadow: 0 4px 15px rgba(220, 168, 32, 0.3);
-}
 
-.hero-download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(220, 168, 32, 0.5);
-    filter: brightness(1.1);
-}
 /* --- Cards/Panels --- */
 .panel {
     background-color: var(--panel-bg);
