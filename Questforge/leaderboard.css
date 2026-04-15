@@ -61,8 +61,11 @@ tbody tr:hover {
 }
 
 .panel {
-    flex: 1.2;         /* Takes up 2.5x more space than the description */
+    flex: 0.9;         /* Takes up 2.5x more space than the description */
     margin: 0;
+    width: 100%;
+    height: 100%; /* Forces table to stretch to the 500px height */
+    overflow: hidden; /* Prevents overflow issues */
 }
 /* 3. Rank Number "Medals" */
 .rank-number {

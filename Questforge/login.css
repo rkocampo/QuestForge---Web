@@ -1,0 +1,64 @@
+/* login.css (Used for both login.html and signup.html) */
+/* --- Back to Realm Button --- */
+.btn-back {
+    position: absolute;
+    top: 100px; /* Sits 20px below your 80px navbar */
+    left: 50px; /* Aligns perfectly with the navbar's left padding */
+    color: var(--text-muted, #8a9bbd);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.btn-back:hover {
+    color: var(--gold-light, #fce07d);
+    transform: translateX(-5px); /* Adds a cool little slide animation when hovered! */
+}
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; 
+    margin-top: 100px;
+}
+
+.login-panel {
+    width: 100%;
+    max-width: 400px; 
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-btn-submit {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 12px;
+    margin-top: 10px;
+    border: none; 
+}
+
+.login-footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+.login-footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-footer-links a:hover {
+    color: var(--gold-light);
+}

@@ -1,8 +1,44 @@
-.profile-top {
+/* Removes link decoration and ensures it takes up the right space */
+.profile-redirect-link {
+    text-decoration: none;
+    flex: 1.1; /* Keeps the same width as your panels */
+    display: block;
+}
+
+.profile-image-clean {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.hero-avatar-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    /* Adds a glow effect on the image instead of a box border */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); 
+    transition: filter 0.3s ease;
+}
+
+/* Hover effects */
+.profile-redirect-link:hover .profile-image-clean {
+    transform: scale(1.02);
+}
+
+.profile-redirect-link:hover .hero-avatar-img {
+    filter: drop-shadow(0 0 15px rgba(236, 199, 65, 0.801)); /* Subtle gold glow */
+}
+
+.click-label {
+    margin-top: 15px;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .avatar {
@@ -37,7 +73,7 @@
 }
 
 .profile-section .panel {
-    flex: 1.2; /* Slightly wider than the text side */
+    flex: 1.1; /* Slightly wider than the text side */
     margin: 0;   /* Removes any default margins that might break alignment */
 }
 .gold-heading {
