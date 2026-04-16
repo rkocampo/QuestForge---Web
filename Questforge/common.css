@@ -259,6 +259,12 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
+.panel:hover {
+    transform: scale(1.02); /* Slight zoom */
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(236, 199, 65, 0.5)); 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+}
+
 .panel-header {
     background-color: var(--panel-header);
     padding: 15px 20px;

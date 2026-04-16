@@ -3,29 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Profile - QuestForge</title>
+    <title>Login - QuestForge</title>
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="about.css">
     <style>
         /* Specific styles for this page only */
         .profile-detail-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    
+    /* THE FIX: Pushes the content down so the Navbar doesn't cover it */
+    margin-top: 80px; 
+    
+    text-align: center;
+    gap: 20px;
+}
 
         .decorative-img {
             width: 100%;
-            max-width: 1400px;
+            max-width: 1300px;
             height: 700px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             margin: 30px 0;
             border: 2px solid var(--accent-blue);
+            cursor: pointer; /* Makes it feel interactive */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+            filter 0.3s ease, 
+            box-shadow 0.3s ease;
+        }
+
+        .decorative-img:hover {
+            transform: scale(1.02); /* Slight zoom */
+            filter: brightness(1.2) drop-shadow(0 0 15px rgba(236, 199, 65, 0.5)); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
         }
 
         .back-nav {
@@ -55,27 +72,48 @@
             max-width: 700px;
             margin: 20px 0;
         }
+
     </style>
 </head>
 <body>
-    
-    <div class="back-nav">
-        <a href="index.html#profile" class="back-link">← Back to Realm</a>
+
+    <div class="container">
+    <nav>
+        <div class="nav-left">
+            <a href="#"><img src="pixelated logo.png" class="nav-logo-img" alt="Logo"></a>
+            <span class="questforge-text">QUESTFORGE</span>
+        </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How it Works</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-login">
+        <a href="login.html" class="btn btn-gold">Login</a>
     </div>
+        
+    </nav>
+
     
-    <div class="profile-detail-wrapper">
+    <main class="profile-detail-wrapper">
+        <a href="index.html#profile" class="btn-back">⬅ Back to Realm</a>
+
 
         <div class="hero-info-text">
             <h1 class="gold-heading">Hero Mastery</h1>
-            <p class="profile-description">Here you can view your full character profile details.</p>
+            <p class="about-subtitle">Here you can view your full character profile details.</p>
         </div> 
 
         <img src="profile1.png" alt="Hero Banner Top" class="decorative-img">
 
     
         <img src="profile2.png" alt="Hero Stats Bottom" class="decorative-img">
-
-    </div>
+    </main>
+        </div>
 
 </body>
 </html>
