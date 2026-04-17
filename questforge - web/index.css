@@ -741,6 +741,17 @@ a {
 .badge-card { top: 550px; left: 18px; animation-delay: -1.8s; }
 .boss-info { top: 550px; right: 0; animation-delay: -1.8s; }
 
+.xp-card:hover,
+.badge-card:hover,
+.boss-info:hover,
+.boy-card:hover,
+.girl-card:hover,
+.boss-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(244, 210, 109, 0.42);
+  box-shadow: 0 0 22px rgba(244, 210, 109, 0.18), 0 15px 34px rgba(0,0,0,0.28);
+}
+
 /* SECTIONS */
 section {
   position: relative;
@@ -1107,15 +1118,58 @@ section {
   color: var(--muted);
 }
 
-/* FOOTER */
-.footer {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 28px;
-  color: var(--muted);
-  background: rgba(0,0,0,0.25);
-  border-top: 1px solid rgba(255,255,255,0.08);
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 0px;
+    color: var(--text-muted);
+}
+
+.footer-logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* --- Utilities --- */
+.page-section {
+    padding: 100px 0;
+    min-height: 80vh; 
+}
+.footer-slim {
+    background-color: #0a132e;
+    border-top: 1px solid var(--accent-blue);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between; /* Spreads items to left, center, and right */
+    align-items: center;
+    /* IMPORTANT: Remove 'page-section' class so it's not 100vh */
+    min-height: 80px; 
+}
+
+.footer-logo-small {
+    color: var(--gold-light);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.footer-left p {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.footer-socials a, .footer-right a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover, .footer-right a:hover {
+    color: var(--gold-light);
 }
 
 /* REVEAL */
@@ -1149,6 +1203,297 @@ section {
 .toast.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+/* ==========================================
+   UPDATED CONTACT & FORM STYLES
+   ========================================== */
+
+#contact {
+    background: radial-gradient(circle at top, var(--bg-2), var(--bg-1));
+    position: relative;
+}
+
+/* Back button styling */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.3s;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-soft);
+}
+
+.btn-back:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    transform: translateX(-5px);
+}
+
+/* Heading & Subtitle */
+.gold-heading {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--gold);
+    text-shadow: var(--shadow-gold);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.dev-subtitle-text {
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+/* Grid Layout */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Panel Styling (The Scroll & Info Box) */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.panel-header {
+    background: rgba(244, 210, 109, 0.1);
+    padding: 20px;
+    color: var(--gold);
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.panel-content {
+    padding: 30px;
+}
+
+/* Contact List */
+.mission-list {
+    list-style: none;
+}
+
+.mission-list li {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mission-list strong {
+    color: var(--gold);
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: 12px;
+    padding: 14px;
+    color: white !important;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 0 15px rgba(244, 210, 109, 0.1);
+}
+
+/* Submit Button Override */
+.login-btn-submit {
+    width: 100%;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Responsive Fix for Contact Grid */
+@media (max-width: 900px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .panel-content {
+        padding: 20px;
+    }
+}
+/* ==========================================
+   PRIVACY SCROLL DESIGN (Unique Classes)
+   ========================================== */
+
+.scroll-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.scroll-header {
+    background: rgba(244, 210, 109, 0.08);
+    padding: 25px;
+    text-align: center;
+    color: var(--gold);
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+.scroll-content {
+    padding: 40px;
+    display: grid;
+    gap: 35px;
+}
+
+.policy-item {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid rgba(244, 210, 109, 0.2);
+    transition: 0.3s ease;
+}
+
+.policy-item:hover {
+    border-left-color: var(--gold);
+    transform: translateX(5px);
+}
+
+.policy-item h3 {
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.policy-item p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Ensure headings match main style */
+.gold-heading {
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--gold);
+    text-shadow: var(--shadow-gold);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-subtitle {
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 15px auto 0;
+    line-height: 1.6;
+}
+/* ==========================================
+   THE GOLDEN BUTTON (Legendary Grade)
+   ========================================== */
+
+.btn-gold {
+    background: linear-gradient(135deg, var(--gold), var(--gold-2));
+    color: #0c1635 !important; /* Dark text for high contrast on gold */
+    box-shadow: var(--shadow-gold);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* The Shine Effect Animation */
+.btn-gold::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        120deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: -1;
+}
+
+.btn-gold:hover::before {
+    left: 150%;
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(244, 210, 109, 0.45);
+    filter: brightness(1.1);
+}
+
+.btn-gold:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Base Button Reset (In case it's not defined) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
 }
 
 /* RESPONSIVE */
