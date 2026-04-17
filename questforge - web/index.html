@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuestForge | Gamified Learning Adventure</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <div class="cursor-glow"></div>
+  <div class="page-bg">
+    <span class="bg-orb orb-a"></span>
+    <span class="bg-orb orb-b"></span>
+    <span class="bg-orb orb-c"></span>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#home" class="brand">
+      <img src="logo1(2).png" alt="QuestForge Logo" class="nav-logo" />
+      <span>QUESTFORGE</span>
+    </a>
+
+    <nav class="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#trial-game">Trial Game</a>
+      <a href="#system-preview">System Preview</a>
+      <a href="#features">Features</a>
+      <a href="#developers">Developers</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="login.html" class="nav-link-btn">Login</a>
+      <a href="download.html" class="nav-download-btn">Download</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="unique-hero" id="home">
+    <div class="hero-stars"></div>
+    <div class="pixel-grid"></div>
+
+    <div class="hero-content reveal">
+      <div class="hero-left hero-panel">
+        <div class="hero-badges">
+          <span>Java-Powered System</span>
+          <span>Student + Teacher Modes</span>
+          <span>Gamified Learning</span>
+        </div>
+
+        <div class="hero-title-block">
+          <span class="hero-kicker">Welcome to the QuestForge Realm</span>
+          <h1>
+            Forge your <span class="gold-text">academic adventure</span>
+          </h1>
+          <p class="hero-subtext">
+            A downloadable Java-based system where teachers create quests,
+            students earn XP, badges unlock, and learning becomes a game-like journey.
+          </p>
+        </div>
+
+        <div class="quest-objective-card tilt-card">
+          <div class="objective-header">
+            <span class="objective-icon">📜</span>
+            <div>
+              <h3>Main Quest</h3>
+              <p>Complete school activities through a gamified classroom system.</p>
+            </div>
+          </div>
+
+          <div class="objective-list">
+            <div><span>01</span> Accept quests from teachers</div>
+            <div><span>02</span> Earn XP and unlock badges</div>
+            <div><span>03</span> Battle bosses and track progress</div>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#trial-game" class="btn btn-trial">Try Trial Game</a>
+          <a href="download.html" class="btn btn-download">Download QuestForge</a>
+          <a href="#system-preview" class="btn btn-secondary">Explore Features</a>
+        </div>
+
+        <div class="path-cards">
+          <div class="path-card tilt-card">
+            <span>🎓</span>
+            <h4>Student Path</h4>
+            <p>Quests, XP, badges, leaderboard, and boss battles.</p>
+          </div>
+
+          <div class="path-card tilt-card">
+            <span>🧙</span>
+            <h4>Teacher Path</h4>
+            <p>Create quests, set XP, monitor progress, and forge battles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="magic-ring ring-one"></div>
+        <div class="magic-ring ring-two"></div>
+
+        <div class="hero-visual">
+          <img src="logo1(2).png" alt="QuestForge Logo" class="hero-logo-main" />
+
+          <div class="character boy-card tilt-card">
+            <img src="Boy(2).png" alt="Student Avatar" />
+            <span>Student</span>
+          </div>
+
+          <div class="character girl-card tilt-card">
+            <img src="Girl(3).png" alt="Player Avatar" />
+            <span>Player</span>
+          </div>
+
+          <div class="character boss-card tilt-card">
+            <img src="TeacherBoy.png" alt="Boss Battle" />
+            <span>Boss</span>
+          </div>
+
+          <div class="floating-card xp-card tilt-card">
+            <h4>+300 XP</h4>
+            <p>Earn rewards by completing quests and challenges.</p>
+          </div>
+
+          <div class="floating-card badge-card tilt-card">
+            <h4>Badge Unlocked</h4>
+            <p>Crowned Scholar, Brave Ember, and more.</p>
+          </div>
+
+          <div class="floating-card boss-info tilt-card">
+            <h4>Boss Battle</h4>
+            <p>3 lives • 3 hints • teacher challenge</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRIAL GAME -->
+  <section class="trial-section" id="trial-game">
+    <div class="section-heading reveal">
+      <span class="section-kicker">Playable Preview</span>
+      <h2>Try a Mini Quest Before Download</h2>
+      <p>Experience the QuestForge style through a quick trial battle.</p>
+    </div>
+
+    <div class="trial-arena reveal">
+      <div class="trial-top">
+        <div>
+          <span class="battle-chip">Trial Boss Battle</span>
+          <h3>Java Basics Dragon</h3>
+          <p>Answer correctly to charge your XP bar and unlock a badge preview.</p>
+        </div>
+        <div class="lives">
+          <span>❤️</span><span>❤️</span><span>❤️</span>
+        </div>
+      </div>
+
+      <div class="xp-track">
+        <div class="xp-fill" id="xpFill"></div>
+      </div>
+
+      <p class="trial-question" id="trialQuestion">Which data type is used to store decimal values in Java?</p>
+
+      <div class="trial-options">
+        <button onclick="answerTrial(this, false)">int</button>
+        <button onclick="answerTrial(this, false)">char</button>
+        <button onclick="answerTrial(this, true)">double</button>
+        <button onclick="answerTrial(this, false)">boolean</button>
+      </div>
+
+      <p class="trial-result" id="trialResult">Choose your answer to begin the quest.</p>
+
+      <a href="download.html" class="btn btn-download trial-cta">Download Full QuestForge</a>
+    </div>
+  </section>
+
+  <!-- SYSTEM PREVIEW -->
+  <section class="preview-section" id="system-preview">
+    <div class="section-heading reveal">
+      <span class="section-kicker">Actual System Connection</span>
+      <h2>Inside the QuestForge System</h2>
+      <p>The website introduces the same features users will experience in the Java application.</p>
+    </div>
+
+    <div class="preview-grid">
+      <article class="preview-card reveal">
+        <div class="preview-img-wrap">
+          <img src="QUESTS3.png" alt="Quest Preview" />
+        </div>
+        <h3>Quest Board</h3>
+        <p>Assignments are presented as quests with rewards, status, and progress.</p>
+      </article>
+
+      <article class="preview-card reveal">
+        <div class="preview-img-wrap">
+          <img src="ACHIEVEMENTS.png" alt="Achievements Preview" />
+        </div>
+        <h3>Achievements Hall</h3>
+        <p>Students unlock badges through XP, completed quests, and milestones.</p>
+      </article>
+
+      <article class="preview-card reveal">
+        <div class="preview-img-wrap">
+          <img src="BOSSBATTLES.png" alt="Boss Battle Preview" />
+        </div>
+        <h3>Boss Battles</h3>
+        <p>Teacher-created challenge battles with lives, hints, and scaled XP rewards.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="roles-section">
+    <div class="section-heading reveal">
+      <span class="section-kicker">Two Connected Experiences</span>
+      <h2>Built for Students and Teachers</h2>
+      <p>QuestForge supports both sides of the classroom adventure.</p>
+    </div>
+
+    <div class="roles-grid">
+      <div class="role-card reveal">
+        <img src="Boy(2).png" alt="Student" />
+        <h3>Student Mode</h3>
+        <ul>
+          <li>Complete quests and claim XP</li>
+          <li>Unlock badges and avatars</li>
+          <li>Join boss battles with hints and lives</li>
+          <li>Track personal tasks and habits</li>
+        </ul>
+      </div>
+
+      <div class="role-card reveal">
+        <img src="TeacherBoy.png" alt="Teacher" />
+        <h3>Teacher Mode</h3>
+        <ul>
+          <li>Create quests with custom XP</li>
+          <li>Monitor student progress</li>
+          <li>Forge 5-question boss battles</li>
+          <li>Review submissions and class rankings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-heading reveal">
+      <span class="section-kicker">Core Gameplay Features</span>
+      <h2>More Than a Task Manager</h2>
+      <p>QuestForge turns academic progress into a visual, reward-driven experience.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal"><span>📜</span><h3>Quest-Based Tasks</h3><p>Teachers turn activities into quests with status and rewards.</p></div>
+      <div class="feature-card reveal"><span>⚡</span><h3>XP & Leveling</h3><p>Students earn XP and level up through effort and completion.</p></div>
+      <div class="feature-card reveal"><span>🏅</span><h3>Badge Unlocks</h3><p>Milestones unlock visual achievements and recognition.</p></div>
+      <div class="feature-card reveal"><span>⚔️</span><h3>Boss Battles</h3><p>Challenge rounds make learning feel like a game.</p></div>
+      <div class="feature-card reveal"><span>📊</span><h3>Class Progress</h3><p>Teachers monitor performance and identify students needing support.</p></div>
+      <div class="feature-card reveal"><span>🎮</span><h3>Downloadable System</h3><p>The website promotes the full Java-based QuestForge application.</p></div>
+    </div>
+  </section>
+
+  <!-- BADGES -->
+  <section class="badges-section">
+    <div class="section-heading reveal">
+      <span class="section-kicker">Rewards Preview</span>
+      <h2>Unlock Legendary Badges</h2>
+      <p>Badges make achievements visible, rewarding, and exciting.</p>
+    </div>
+
+    <div class="badges-grid">
+      <div class="badge-card reveal"><img src="crowned scholar(1).png" alt="Crowned Scholar"><span>Crowned Scholar</span></div>
+      <div class="badge-card reveal"><img src="brave ember(1).png" alt="Brave Ember"><span>Brave Ember</span></div>
+      <div class="badge-card reveal"><img src="flash of insight(1).png" alt="Flash of Insight"><span>Flash of Insight</span></div>
+      <div class="badge-card reveal"><img src="grandmaster of quests(1).png" alt="Grandmaster"><span>Grandmaster</span></div>
+      <div class="badge-card reveal"><img src="mindblade adept(1).png" alt="Mindblade Adept"><span>Mindblade Adept</span></div>
+      <div class="badge-card reveal"><img src="time bender.png" alt="Time Bender"><span>Time Bender</span></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="download-cta reveal">
+    <div class="cta-panel">
+      <h2>Ready to Begin the Adventure?</h2>
+      <p>Download QuestForge and turn your classroom into a gamified learning realm.</p>
+      <a href="download.html" class="btn btn-download big-btn">Download Now</a>
+    </div>
+  </section>
+
+  <!-- DEVELOPERS -->
+  <section class="developers-section" id="developers">
+    <div class="section-heading reveal">
+      <span class="section-kicker">Development Team</span>
+      <h2>Meet the Developers</h2>
+      <p>The creators behind QuestForge.</p>
+    </div>
+
+    <div class="developers-grid">
+      <a href="gerald-portfolio.html" class="dev-card reveal"><img src="gerald.jpg" alt="Gerald"><h3>Gerald</h3><p>Lead Developer</p></a>
+      <a href="daryl-portfolio.html" class="dev-card reveal"><img src="daryl.jpg" alt="Daryl"><h3>Daryl</h3><p>UI/UX Designer</p></a>
+      <a href="janry-portfolio.html" class="dev-card reveal"><img src="Janry.jpg" alt="Janry"><h3>Janry</h3><p>Web Developer</p></a>
+      <a href="rhian-portfolio.html" class="dev-card reveal"><img src="rhian.jpg" alt="Rhian"><h3>Rhian</h3><p>Project Manager</p></a>
+      <a href="zyron-portfolio.html" class="dev-card reveal"><img src="zyron.jpg" alt="Zyron"><h3>Zyron</h3><p>Documentator</p></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 QuestForge. Gamifying academic tasks into adventures.</p>
+  </footer>
+
+  <div class="toast" id="toast">Badge Preview Unlocked!</div>
+
+  <script src="trial-game.js"></script>
+</body>
+</html>
