@@ -1,0 +1,118 @@
+/* index.css */
+
+.questforge {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    max-width: 900px; 
+    margin: 10px auto; 
+    margin-top: 50px;
+    padding: 0px;
+}
+
+.questforge-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questforge-logo-img {
+    height: 500px; 
+    width: 100%;   
+    max-width: 900px; 
+    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5)); 
+}
+
+.questforge-title {
+    font-size: 3rem;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+
+}
+
+.questforge-subtitle {
+    font-size: 1.8rem;
+    color: #ffffff;
+    line-height: 1.8;
+    max-width: 700px; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .questforge-title {
+        font-size: 2.2rem;
+    }
+
+    .questforge-subtitle {
+        font-size: rem;
+    }
+
+    .questforge-logo-img {
+        max-width: 250px;
+    }
+}
+
+/* --- CLEAN SHOWCASE (NO BORDERS) --- */
+.showcase-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.showcase-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the text and image */
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+.showcase-text p {
+    font-size: 1.5rem; 
+    line-height: 1.6;
+    color: #ffffff;
+    margin-top: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* This container holds the space for the image */
+.image-area {
+    width: 100%;
+    height: 230px; /* Adjust this to fit your largest image */
+    display: flex;
+    align-items: center; /* Vertically centers images of different heights */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-area img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Keeps original proportions without stretching */
+    display: block;
+}
+/* This ensures the link doesn't look like a link */
+.download-link {
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.cta-button {
+    cursor: pointer;
+    /* Keeps your existing orange/gold styles from the compiled CSS */
+}
+/* Mobile: Stack them vertically */
+@media (max-width: 768px) {
+    .showcase-container {
+        flex-direction: column;
+    }
+    .image-area {
+        height: auto; /* Let them be natural size on mobile */
+    }
+}
