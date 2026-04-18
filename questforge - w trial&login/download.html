@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download QuestForge</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .download-page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 80px 7%;
+      background:
+        radial-gradient(circle at center, rgba(244,210,109,0.16), transparent 40%),
+        linear-gradient(180deg, #07122f, #061022);
+    }
+
+    .download-card {
+      max-width: 760px;
+      width: 100%;
+      text-align: center;
+      padding: 46px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.04));
+      border: 1px solid rgba(244,210,109,0.28);
+      border-radius: 28px;
+      box-shadow: 0 0 36px rgba(244,210,109,0.15);
+      backdrop-filter: blur(14px);
+    }
+
+    .download-card img {
+      width: 190px;
+      filter: drop-shadow(0 0 24px rgba(244,210,109,0.45));
+      animation: floatCard 4s ease-in-out infinite;
+      margin-bottom: 18px;
+    }
+
+    .download-card h1 {
+      color: var(--gold);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 12px;
+    }
+
+    .download-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .download-progress {
+      height: 18px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      margin: 24px 0;
+    }
+
+    .download-bar {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #4d8dff, var(--gold));
+      box-shadow: 0 0 18px rgba(244,210,109,0.35);
+      animation: downloadFill 4s ease forwards;
+    }
+
+    @keyframes downloadFill {
+      to { width: 100%; }
+    }
+
+    .download-status {
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .back-home {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg">
+    <span class="bg-orb orb-a"></span>
+    <span class="bg-orb orb-b"></span>
+  </div>
+
+  <main class="download-page">
+    <section class="download-card reveal active">
+      <img src="pixelated logo.png" alt="QuestForge Logo" />
+      <h1>Forging QuestForge...</h1>
+      <p>
+        Preparing the downloadable Java-based QuestForge system with quests, XP,
+        badges, leaderboards, teacher tools, and boss battles.
+      </p>
+
+      <div class="download-progress">
+        <div class="download-bar"></div>
+      </div>
+
+      <div class="download-status" id="status">Downloading system package...</div>
+
+      <a href="#" class="btn btn-download">Download Complete</a>
+      <a href="index.html" class="btn btn-secondary back-home">Back Home</a>
+    </section>
+  </main>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("status").textContent = "QuestForge is ready. Continue your academic adventure.";
+    }, 4200);
+  </script>
+</body>
+</html>

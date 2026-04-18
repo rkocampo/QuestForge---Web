@@ -1,0 +1,446 @@
+:root {
+    --bg-dark: #070e20;
+    --panel-bg: #111e40;
+    --panel-header: #0a132e;
+    --gold-light: #fce07d;
+    --gold-main: #dca820;
+    --text-main: #e0e5ff;
+    --text-muted: #fcfcfc;
+    --accent-blue: #2b4b8a;
+    --success-green: #3b823e;
+    --warning-orange: #b87a14;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    background: linear-gradient(270deg, #070e20, #111e40, #0a132e);
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Simple & Clean Navigation --- */
+/* --- Adoptium-Style Navigation --- */
+/* --- The Nav Container --- */
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    height: 80px; 
+    padding: 0 6%; 
+    box-sizing: border-box; 
+    background-color: rgba(17, 30, 64, 0.8); 
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* --- 1. Left Side (Logo) --- */
+/* --- Navbar Logo Fix --- */
+/* 1. Left Side (Logo Container) */
+.nav-left {
+    flex: 1; /* Takes up 1/3 of space */
+    display: flex;
+    justify-content: flex-start;
+}
+.questforge-text {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0 0 5px rgba(252, 224, 125, 0.5)) 
+            drop-shadow(0 0 10px rgba(220, 168, 32, 0.7));
+    }
+
+.nav-logo-img {
+    height: 75px; /* Reduced slightly to fit 80px nav better */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo-img:hover {
+    transform: scale(1.05);
+}
+/* 2. Middle (The Links) */
+.nav-links {
+    flex: 2; /* Takes up the middle space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-main, #e0e5ff);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap; /* Prevents links from wrapping */
+}
+
+/* 3. Right Side (Login Button Container) */
+.nav-login {
+    flex: 1; /* Takes up 1/3 of space, balancing the logo side */
+    display: flex;
+    justify-content: flex-end;
+} 
+
+.nav-links a:hover {
+    color: var(--gold-light, #fce07d);
+    /* Removed flex: 1 from hover so it doesn't distort! */
+}
+
+/* --- Hero Section (Swapped: Text Left, Image Right) --- */
+.hero-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh; /* Restored to your original 90vh */
+    height: 100vh; 
+    width: 100%;
+}
+
+.questforge-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Restored to equal columns */
+    gap: 60px; /* Restored to your original 60px gap */
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text-side {
+    text-align: left;
+}
+
+.hero-text-side .gold-heading {
+    text-align: left;
+    margin-bottom: 20px; /* Restored original margin */
+    font-size: 3rem; /* Restored original font-size */
+}
+
+.hero-text-side .questforge-subtitle {
+    text-align: left;
+    margin: 0 0 30px 0; /* Restored original margin format */
+    max-width: 100%;
+}
+
+.hero-actions {
+    margin-top: 40px; /* Restored original action margin */
+    display: flex;
+    justify-content: flex-start; /* Button on the left */
+}
+
+.hero-image-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero-main-img {
+    max-height: 60vh; 
+    width: auto;
+    max-width: 100%;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* --- Buttons --- */
+.btn {
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.btn-gold {
+    background: linear-gradient(to bottom, var(--gold-light), var(--gold-main));
+    color: #111;
+    border: 1px solid #fff;
+}
+/* --- Shared Forms (Used in Login and Index) --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    background-color: rgba(0, 0, 0, 0.3); 
+    border: 1px solid var(--accent-blue);
+    color: var(--text-main);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--gold-main); 
+}
+
+/* --- Layout Utilities --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.gold-heading {
+    color: var(--gold-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+.gold-heading:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(252, 224, 125, 0.384)) 
+            drop-shadow(0 0 30px rgba(220, 168, 32, 0.6));
+}
+
+/* Container for the Hero Button */
+.hero-actions {
+    margin-top: 40px; /* Space between subtitle and button */
+    display: flex;
+    justify-content: left;
+}
+
+/* Specific styling for the Hero Download Button */
+
+/* --- Cards/Panels --- */
+.panel {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--accent-blue);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.panel:hover {
+    transform: scale(1.02); /* Slight zoom */
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(236, 199, 65, 0.5)); 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+}
+
+.panel-header {
+    background-color: var(--panel-header);
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--accent-blue);
+    font-weight: bold;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-content {
+    padding: 30px;
+}
+
+.page-section {
+    padding: 100px 0;
+    min-height: 80vh; 
+}
+
+html {
+    scroll-behavior: smooth; /* scrollable to guys */
+}
+/* Contact Section Specific Styles */
+textarea {
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: var(--gold-light, #fce07d) !important;
+    box-shadow: 0 0 10px rgba(252, 224, 125, 0.2);
+}
+
+#contact {
+    /* Ensures the section has enough space to breathe */
+    padding-bottom: 100px;
+}
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 0px;
+    color: var(--text-muted);
+}
+
+.footer-logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* --- Utilities --- */
+.page-section {
+    padding: 100px 0;
+    min-height: 80vh; 
+}
+.footer-slim {
+    background-color: #0a132e;
+    border-top: 1px solid var(--accent-blue);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between; /* Spreads items to left, center, and right */
+    align-items: center;
+    /* IMPORTANT: Remove 'page-section' class so it's not 100vh */
+    min-height: 80px; 
+}
+
+.footer-logo-small {
+    color: var(--gold-light);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.footer-left p {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.footer-socials a, .footer-right a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover, .footer-right a:hover {
+    color: var(--gold-light);
+}
+
+/* Responsive: Stack them on mobile so they don't crush together */
+@media (max-width: 600px) {
+    .footer-slim {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}
+
+
+
+/* Mobile & Small Tablets (under 900px) */
+@media (max-width: 900px) {
+    nav {
+        height: auto;
+        padding: 15px 20px;
+        flex-direction: column; /* Stack logo and links */
+        position: relative; /* Unfix if you want to save screen space */
+    }
+
+    .nav-left, .nav-login {
+        justify-content: center;
+        flex: none;
+        width: 100%;
+    }
+
+    .nav-links {
+        padding: 15px 0;
+        gap: 20px;
+        flex-wrap: wrap; /* Allow links to wrap to second line */
+    }
+
+    .hero-split {
+        height: auto;
+        padding-top: 120px; /* Space for the stacked nav */
+        min-height: auto;
+    }
+
+    .questforge-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-text-side, 
+    .hero-text-side .gold-heading, 
+    .hero-text-side .questforge-subtitle {
+        text-align: center;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-text-side { order: 2; } /* Text below image on mobile */
+    .hero-image-side { order: 1; }
+
+    .hero-main-img {
+        max-height: 40vh;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr; /* Stack panels vertically */
+    }
+}
+
+/* Tiny Screens (under 480px) */
+@media (max-width: 480px) {
+    .hero-text-side .gold-heading {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .hero-download-btn {
+        width: 100%; /* Full width button on small phones */
+        text-align: center;
+    }
+
+    .panel-content {
+        padding: 15px; /* Less padding inside cards */
+    }
+}

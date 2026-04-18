@@ -1,0 +1,115 @@
+/* Container for the entire section */
+#developers {
+    padding: 120px 0; /* Increased from 60px to match the "clean" look of other sections */
+    width: 100%;
+}
+
+.dev-header-area {
+    text-align: center;
+    margin-bottom: 80px; /* Increased from 40px to separate title from the box */
+}
+
+.dev-subtitle-text {
+    color: var(--text-muted, #8a9bbd);
+    font-size: 1.4rem;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+/* The "Box" containing the developers */
+.dev-wireframe-container {
+    background-color: rgba(17, 30, 64, 0.7); 
+    border: 2px solid #2b4b8a; 
+    border-radius: 20px;
+    padding: 80px 40px; /* Increased internal padding for breathing room */
+    width: 100%;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+}
+
+/* The horizontal layout for the 5 members */
+.dev-flex-row {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important; 
+    gap: 30px; /* Increased gap from 15px so members aren't cramped */
+    width: 100%;
+}
+
+.dev-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px; /* Small internal buffer */
+}
+
+/* Role Label at the top */
+.dev-role-top {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* More space before the photo */
+    letter-spacing: 1px;
+}
+
+/* Photo box - The Circle */
+.dev-image-container {
+    width: 140px; /* Slightly smaller to ensure fit in grid */
+    height: 140px;
+    margin-bottom: 25px; /* More space before the name */
+    overflow: hidden;
+    border-radius: 50%; 
+    border: 3px solid #D4AF37; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.dev-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* Gold names */
+.dev-name-gold {
+    color: #fce07d !important; 
+    font-size: 1.1rem; /* Slightly larger for better readability */
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 150px; /* Keeps long names from stretching the card */
+}
+
+/* Hover effects */
+.dev-card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.dev-card-link:hover {
+    transform: translateY(-10px);
+}
+
+.dev-card-link:hover .dev-name-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 1100px) {
+    .dev-flex-row {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dev-flex-row {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 50px;
+    }
+    
+    .dev-wireframe-container {
+        padding: 60px 20px;
+    }
+}

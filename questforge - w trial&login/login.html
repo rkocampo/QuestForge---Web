@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - QuestForge</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+    <div class="container">
+    <nav>
+        <div class="nav-left">
+            <a href="#"><img src="pixelated logo.png" class="nav-logo-img" alt="Logo"></a>
+            <span class="questforge-text">QUESTFORGE</span>
+        </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How it Works</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-login">
+        <a href="login.html" class="btn btn-gold">Login</a>
+    </div>
+        
+    </nav>
+
+        <main class="login-wrapper">
+            
+            <a href="index.html" class="btn-back">⬅ Back to Realm</a>
+
+            <div class="panel login-panel">
+                <div class="panel-header" style="justify-content: center; font-size: 1.3rem;">
+                    Enter the Realm
+                </div>
+                <div class="panel-content">
+                    <form action="#" class="login-form" id="loginForm">
+                        
+                        <div class="form-group">
+                            <label for="username">Hero Name</label>
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold login-btn-submit">Login</button>
+
+                        <div class="login-footer-links">
+                            <a href="#">Forgot Password?</a>
+                            <a href="signup.html">Create an Account</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const redirectTarget = new URLSearchParams(window.location.search).get("redirect") || "index.html";
+
+        if (loginForm) {
+            loginForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                window.location.href = redirectTarget;
+            });
+        }
+    </script>
+</body>
+</html>
