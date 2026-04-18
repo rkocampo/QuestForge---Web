@@ -607,6 +607,53 @@ a {
   line-height: 1.5;
   margin: 0;
 }
+.card-link {
+  text-decoration: none; 
+  color: inherit;        
+  display: block;      
+}
+/* Core Layout Fix */
+.system-preview {
+    padding: 80px 0;
+    width: 100%;
+    position: relative;
+    z-index: 5; /* Ensures it sits above the background orbs */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.path-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces 2 columns */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Ensure the image container has a height */
+.card-image-container {
+    width: 100%;
+    height: 200px; /* Force a height so it doesn't collapse */
+    background: rgba(0,0,0,0.2); /* Placeholder color if image fails */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the screenshot fits the box nicely */
+}
+
+/* Prevent Reveal from hiding content permanently */
+.reveal {
+    opacity: 1 !important; /* Force show for now to debug */
+    transform: none !important;
+}
 
 .hero-panel .hero-buttons {
   position: relative;
@@ -1568,6 +1615,162 @@ footer {
     max-width: 600px;
     margin: 15px auto 0;
     line-height: 1.6;
+}
+/* ==========================================
+  QUESTFORGE - LOGIN PORTAL STYLES
+   ========================================== */
+
+body {
+    background: radial-gradient(circle at top, #0b245c, #061022);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Scoped Login Panel to prevent layout breaks */
+.login-panel {
+    width: 100%;
+    max-width: 450px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.login-panel .panel-header {
+    background: rgba(244, 210, 109, 0.1);
+    padding: 25px;
+    color: var(--gold);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+}
+
+/* Input Styling */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.form-group input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(244, 210, 109, 0.15);
+}
+
+/* Footer Links */
+.login-footer-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.login-footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-footer-links a:hover {
+    color: var(--gold);
+}
+
+/* ==========================================
+    QUESTFORGE - SIGNUP PORTAL STYLES
+   ========================================== */
+
+/* Reuse the login-wrapper and login-panel logic */
+.login-wrapper {
+    padding: 60px 20px; /* Extra padding for the longer form */
+}
+
+.login-panel {
+    max-width: 480px; /* Slightly wider to accommodate longer labels */
+}
+
+/* Specific styling for the 'Already have an account' text */
+.text-muted {
+    color: var(--muted);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Ensuring the "Log In" link stands out */
+.login-footer-links a {
+    color: var(--gold) !important;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-footer-links a:hover {
+    text-shadow: 0 0 10px rgba(244, 210, 109, 0.5);
+    text-decoration: underline;
+}
+
+/* Mobile adjustments for the longer form */
+@media (max-width: 480px) {
+    .login-wrapper {
+        padding: 40px 15px;
+    }
+    .panel-content {
+        padding: 20px;
+    }
+}
+/* Back Button */
+.btn-back {
+    margin-bottom: 20px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-soft);
+}
+
+.btn-back:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    transform: translateX(-5px);
 }
 /* ==========================================
     THE GOLDEN BUTTON (Legendary Grade)
