@@ -651,8 +651,9 @@ a {
 
 /* Prevent Reveal from hiding content permanently */
 .reveal {
-    opacity: 1 !important; /* Force show for now to debug */
-    transform: none !important;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.78s ease, transform 0.78s ease;
 }
 
 .hero-panel .hero-buttons {
