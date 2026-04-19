@@ -614,10 +614,10 @@ a {
 }
 /* Core Layout Fix */
 .system-preview {
-    padding: 80px 0;
-    width: 100%;
     position: relative;
-    z-index: 5; /* Ensures it sits above the background orbs */
+    z-index: 10;
+    padding: 100px 0;
+    display: block !important; /* Overrides any accidental hidden displays */
 }
 
 .container {
@@ -1364,6 +1364,13 @@ footer {
   transition: opacity 0.78s ease, transform 0.78s ease;
 }
 
+
+#system-preview .reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
@@ -1468,6 +1475,7 @@ footer {
 .panel-content {
     padding: 30px;
 }
+
 
 /* Contact List */
 .mission-list {
