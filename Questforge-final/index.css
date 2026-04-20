@@ -1357,6 +1357,7 @@ footer {
     color: var(--gold-light);
 }
 
+
 /* REVEAL */
 .reveal {
   opacity: 0;
@@ -1371,6 +1372,7 @@ footer {
     visibility: visible !important;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
